@@ -508,50 +508,65 @@ void PrintTo(const ::std::tr1::tuple<T1, T2>& t, ::std::ostream* os) {
   PrintTupleTo(t, os);
 }
 
+#if 3 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3>
 void PrintTo(const ::std::tr1::tuple<T1, T2, T3>& t, ::std::ostream* os) {
   PrintTupleTo(t, os);
 }
+#endif
 
+#if 4 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4>
 void PrintTo(const ::std::tr1::tuple<T1, T2, T3, T4>& t, ::std::ostream* os) {
   PrintTupleTo(t, os);
 }
+#endif
 
+#if 5 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 void PrintTo(const ::std::tr1::tuple<T1, T2, T3, T4, T5>& t,
              ::std::ostream* os) {
   PrintTupleTo(t, os);
 }
+#endif
 
+#if 6 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
 void PrintTo(const ::std::tr1::tuple<T1, T2, T3, T4, T5, T6>& t,
              ::std::ostream* os) {
   PrintTupleTo(t, os);
 }
+#endif
 
+#if 7 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6, typename T7>
 void PrintTo(const ::std::tr1::tuple<T1, T2, T3, T4, T5, T6, T7>& t,
              ::std::ostream* os) {
   PrintTupleTo(t, os);
 }
+#endif
 
+#if 8 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6, typename T7, typename T8>
 void PrintTo(const ::std::tr1::tuple<T1, T2, T3, T4, T5, T6, T7, T8>& t,
              ::std::ostream* os) {
   PrintTupleTo(t, os);
 }
+#endif
 
+#if 9 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6, typename T7, typename T8, typename T9>
 void PrintTo(const ::std::tr1::tuple<T1, T2, T3, T4, T5, T6, T7, T8, T9>& t,
              ::std::ostream* os) {
   PrintTupleTo(t, os);
 }
+#endif
 
+#if 10 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6, typename T7, typename T8, typename T9, typename T10>
 void PrintTo(
@@ -559,6 +574,8 @@ void PrintTo(
     ::std::ostream* os) {
   PrintTupleTo(t, os);
 }
+#endif
+
 #endif  // GTEST_HAS_TR1_TUPLE
 
 // Overload for std::pair.

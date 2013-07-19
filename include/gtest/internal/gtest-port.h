@@ -782,6 +782,31 @@ using ::std::tuple_size;
 # define GTEST_HAS_CXXABI_H_ 0
 #endif
 
+#ifdef _MSC_VER
+
+// std::tuple under MSVC has a fixed maximum for the number of template
+// arguments it supports, but this number is a preprocessor macro, not a
+// standardized constant.  _VARIADIC_MAX is this macro.  Unfortunately it
+// isn't provided on all platforms and may be either 8 or 10.
+//
+// If GTEST_MAXIMUM_TUPLE_OVERLOAD isn't already set, we will default its
+// value to the variadic maximum instead of to 10
+#if defined(_VARIADIC_MAX) && !defined(GTEST_MAXIMUM_TUPLE_OVERLOAD)
+#define GTEST_MAXIMUM_TUPLE_OVERLOAD _VARIADIC_MAX
+#endif
+
+#if _VARIADIC_MAX < GTEST_MAXIMUM_TUPLE_OVERLOAD
+#error The variadic maximum is less than the requested tuple overload. \
+  Increase _VARIADIC_MAX or lower GTEST_MAXIMUM_TUPLE_OVERLOAD
+#endif
+
+#endif
+
+#if !defined(GTEST_MAXIMUM_TUPLE_OVERLOAD)
+// Provide a default value of 10
+#define GTEST_MAXIMUM_TUPLE_OVERLOAD 10
+#endif
+
 namespace testing {
 
 class Message;
