@@ -3155,6 +3155,7 @@ class ValueArray50 {
 // Generates values from the Cartesian product of values produced
 // by the argument generators.
 //
+#if 2 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2>
 class CartesianProductGenerator2
     : public ParamGeneratorInterface< ::std::tr1::tuple<T1, T2> > {
@@ -3268,8 +3269,9 @@ class CartesianProductGenerator2
   const ParamGenerator<T1> g1_;
   const ParamGenerator<T2> g2_;
 };  // class CartesianProductGenerator2
+#endif
 
-
+#if 3 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3>
 class CartesianProductGenerator3
     : public ParamGeneratorInterface< ::std::tr1::tuple<T1, T2, T3> > {
@@ -3400,8 +3402,9 @@ class CartesianProductGenerator3
   const ParamGenerator<T2> g2_;
   const ParamGenerator<T3> g3_;
 };  // class CartesianProductGenerator3
+#endif
 
-
+#if 4 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4>
 class CartesianProductGenerator4
     : public ParamGeneratorInterface< ::std::tr1::tuple<T1, T2, T3, T4> > {
@@ -3551,8 +3554,9 @@ class CartesianProductGenerator4
   const ParamGenerator<T3> g3_;
   const ParamGenerator<T4> g4_;
 };  // class CartesianProductGenerator4
+#endif
 
-
+#if 5 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 class CartesianProductGenerator5
     : public ParamGeneratorInterface< ::std::tr1::tuple<T1, T2, T3, T4, T5> > {
@@ -3718,8 +3722,9 @@ class CartesianProductGenerator5
   const ParamGenerator<T4> g4_;
   const ParamGenerator<T5> g5_;
 };  // class CartesianProductGenerator5
+#endif
 
-
+#if 6 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6>
 class CartesianProductGenerator6
@@ -3904,8 +3909,9 @@ class CartesianProductGenerator6
   const ParamGenerator<T5> g5_;
   const ParamGenerator<T6> g6_;
 };  // class CartesianProductGenerator6
+#endif
 
-
+#if 7 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7>
 class CartesianProductGenerator7
@@ -4107,8 +4113,9 @@ class CartesianProductGenerator7
   const ParamGenerator<T6> g6_;
   const ParamGenerator<T7> g7_;
 };  // class CartesianProductGenerator7
+#endif
 
-
+#if 8 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8>
 class CartesianProductGenerator8
@@ -4329,8 +4336,9 @@ class CartesianProductGenerator8
   const ParamGenerator<T7> g7_;
   const ParamGenerator<T8> g8_;
 };  // class CartesianProductGenerator8
+#endif
 
-
+#if 9 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8, typename T9>
 class CartesianProductGenerator9
@@ -4568,8 +4576,9 @@ class CartesianProductGenerator9
   const ParamGenerator<T8> g8_;
   const ParamGenerator<T9> g9_;
 };  // class CartesianProductGenerator9
+#endif
 
-
+#if 10 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
     typename T6, typename T7, typename T8, typename T9, typename T10>
 class CartesianProductGenerator10
@@ -4824,7 +4833,7 @@ class CartesianProductGenerator10
   const ParamGenerator<T9> g9_;
   const ParamGenerator<T10> g10_;
 };  // class CartesianProductGenerator10
-
+#endif
 
 // INTERNAL IMPLEMENTATION - DO NOT USE IN USER CODE.
 //
@@ -4832,6 +4841,7 @@ class CartesianProductGenerator10
 // casting CartesianProductGeneratorN<T> to ParamGenerator<U> if T is
 // convertible to U.
 //
+#if 2 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <class Generator1, class Generator2>
 class CartesianProductHolder2 {
  public:
@@ -4852,7 +4862,9 @@ CartesianProductHolder2(const Generator1& g1, const Generator2& g2)
   const Generator1 g1_;
   const Generator2 g2_;
 };  // class CartesianProductHolder2
+#endif
 
+#if 3 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <class Generator1, class Generator2, class Generator3>
 class CartesianProductHolder3 {
  public:
@@ -4876,7 +4888,9 @@ CartesianProductHolder3(const Generator1& g1, const Generator2& g2,
   const Generator2 g2_;
   const Generator3 g3_;
 };  // class CartesianProductHolder3
+#endif
 
+#if 4 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <class Generator1, class Generator2, class Generator3,
     class Generator4>
 class CartesianProductHolder4 {
@@ -4903,7 +4917,9 @@ CartesianProductHolder4(const Generator1& g1, const Generator2& g2,
   const Generator3 g3_;
   const Generator4 g4_;
 };  // class CartesianProductHolder4
+#endif
 
+#if 5 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <class Generator1, class Generator2, class Generator3,
     class Generator4, class Generator5>
 class CartesianProductHolder5 {
@@ -4932,7 +4948,9 @@ CartesianProductHolder5(const Generator1& g1, const Generator2& g2,
   const Generator4 g4_;
   const Generator5 g5_;
 };  // class CartesianProductHolder5
+#endif
 
+#if 6 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <class Generator1, class Generator2, class Generator3,
     class Generator4, class Generator5, class Generator6>
 class CartesianProductHolder6 {
@@ -4965,7 +4983,9 @@ CartesianProductHolder6(const Generator1& g1, const Generator2& g2,
   const Generator5 g5_;
   const Generator6 g6_;
 };  // class CartesianProductHolder6
+#endif
 
+#if 7 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <class Generator1, class Generator2, class Generator3,
     class Generator4, class Generator5, class Generator6, class Generator7>
 class CartesianProductHolder7 {
@@ -5001,7 +5021,9 @@ CartesianProductHolder7(const Generator1& g1, const Generator2& g2,
   const Generator6 g6_;
   const Generator7 g7_;
 };  // class CartesianProductHolder7
+#endif
 
+#if 8 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <class Generator1, class Generator2, class Generator3,
     class Generator4, class Generator5, class Generator6, class Generator7,
     class Generator8>
@@ -5041,7 +5063,9 @@ CartesianProductHolder8(const Generator1& g1, const Generator2& g2,
   const Generator7 g7_;
   const Generator8 g8_;
 };  // class CartesianProductHolder8
+#endif
 
+#if 9 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <class Generator1, class Generator2, class Generator3,
     class Generator4, class Generator5, class Generator6, class Generator7,
     class Generator8, class Generator9>
@@ -5085,7 +5109,9 @@ CartesianProductHolder9(const Generator1& g1, const Generator2& g2,
   const Generator8 g8_;
   const Generator9 g9_;
 };  // class CartesianProductHolder9
+#endif
 
+#if 10 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <class Generator1, class Generator2, class Generator3,
     class Generator4, class Generator5, class Generator6, class Generator7,
     class Generator8, class Generator9, class Generator10>
@@ -5132,6 +5158,7 @@ CartesianProductHolder10(const Generator1& g1, const Generator2& g2,
   const Generator9 g9_;
   const Generator10 g10_;
 };  // class CartesianProductHolder10
+#endif
 
 # endif  // GTEST_HAS_COMBINE
 

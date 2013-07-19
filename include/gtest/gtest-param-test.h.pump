@@ -431,12 +431,14 @@ $range i 2..maxtuple
 $for i [[
 $range j 1..i
 
+#if $i <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <$for j, [[typename Generator$j]]>
 internal::CartesianProductHolder$i<$for j, [[Generator$j]]> Combine(
     $for j, [[const Generator$j& g$j]]) {
   return internal::CartesianProductHolder$i<$for j, [[Generator$j]]>(
       $for j, [[g$j]]);
 }
+#endif
 
 ]]
 # endif  // GTEST_HAS_COMBINE

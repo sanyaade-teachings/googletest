@@ -1270,20 +1270,25 @@ inline internal::ParamGenerator<bool> Bool() {
 // INSTANTIATE_TEST_CASE_P(TwoBoolSequence, FlagDependentTest,
 //                         Combine(Bool(), Bool()));
 //
+#if 2 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename Generator1, typename Generator2>
 internal::CartesianProductHolder2<Generator1, Generator2> Combine(
     const Generator1& g1, const Generator2& g2) {
   return internal::CartesianProductHolder2<Generator1, Generator2>(
       g1, g2);
 }
+#endif
 
+#if 3 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename Generator1, typename Generator2, typename Generator3>
 internal::CartesianProductHolder3<Generator1, Generator2, Generator3> Combine(
     const Generator1& g1, const Generator2& g2, const Generator3& g3) {
   return internal::CartesianProductHolder3<Generator1, Generator2, Generator3>(
       g1, g2, g3);
 }
+#endif
 
+#if 4 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename Generator1, typename Generator2, typename Generator3,
     typename Generator4>
 internal::CartesianProductHolder4<Generator1, Generator2, Generator3,
@@ -1294,7 +1299,9 @@ internal::CartesianProductHolder4<Generator1, Generator2, Generator3,
       Generator4>(
       g1, g2, g3, g4);
 }
+#endif
 
+#if 5 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename Generator1, typename Generator2, typename Generator3,
     typename Generator4, typename Generator5>
 internal::CartesianProductHolder5<Generator1, Generator2, Generator3,
@@ -1305,7 +1312,9 @@ internal::CartesianProductHolder5<Generator1, Generator2, Generator3,
       Generator4, Generator5>(
       g1, g2, g3, g4, g5);
 }
+#endif
 
+#if 6 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename Generator1, typename Generator2, typename Generator3,
     typename Generator4, typename Generator5, typename Generator6>
 internal::CartesianProductHolder6<Generator1, Generator2, Generator3,
@@ -1316,7 +1325,9 @@ internal::CartesianProductHolder6<Generator1, Generator2, Generator3,
       Generator4, Generator5, Generator6>(
       g1, g2, g3, g4, g5, g6);
 }
+#endif
 
+#if 7 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename Generator1, typename Generator2, typename Generator3,
     typename Generator4, typename Generator5, typename Generator6,
     typename Generator7>
@@ -1329,7 +1340,9 @@ internal::CartesianProductHolder7<Generator1, Generator2, Generator3,
       Generator4, Generator5, Generator6, Generator7>(
       g1, g2, g3, g4, g5, g6, g7);
 }
+#endif
 
+#if 8 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename Generator1, typename Generator2, typename Generator3,
     typename Generator4, typename Generator5, typename Generator6,
     typename Generator7, typename Generator8>
@@ -1342,6 +1355,7 @@ internal::CartesianProductHolder8<Generator1, Generator2, Generator3,
       Generator4, Generator5, Generator6, Generator7, Generator8>(
       g1, g2, g3, g4, g5, g6, g7, g8);
 }
+#endif
 
 #if 9 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename Generator1, typename Generator2, typename Generator3,
@@ -1357,7 +1371,9 @@ internal::CartesianProductHolder9<Generator1, Generator2, Generator3,
       Generator4, Generator5, Generator6, Generator7, Generator8, Generator9>(
       g1, g2, g3, g4, g5, g6, g7, g8, g9);
 }
+#endif
 
+#if 10 <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <typename Generator1, typename Generator2, typename Generator3,
     typename Generator4, typename Generator5, typename Generator6,
     typename Generator7, typename Generator8, typename Generator9,
@@ -1375,7 +1391,6 @@ internal::CartesianProductHolder10<Generator1, Generator2, Generator3,
       g1, g2, g3, g4, g5, g6, g7, g8, g9, g10);
 }
 #endif
-
 # endif  // GTEST_HAS_COMBINE
 
 

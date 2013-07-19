@@ -126,6 +126,7 @@ $for i [[
 $range j 1..i
 $range k 2..i
 
+#if $i <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <$for j, [[typename T$j]]>
 class CartesianProductGenerator$i
     : public ParamGeneratorInterface< ::std::tr1::tuple<$for j, [[T$j]]> > {
@@ -249,7 +250,7 @@ $for j [[
 
 ]]
 };  // class CartesianProductGenerator$i
-
+#endif
 
 ]]
 
@@ -263,6 +264,7 @@ $range i 2..maxtuple
 $for i [[
 $range j 1..i
 
+#if $i <= GTEST_MAXIMUM_TUPLE_OVERLOAD
 template <$for j, [[class Generator$j]]>
 class CartesianProductHolder$i {
  public:
@@ -288,6 +290,7 @@ $for j [[
 
 ]]
 };  // class CartesianProductHolder$i
+#endif
 
 ]]
 
